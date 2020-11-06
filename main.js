@@ -44,9 +44,11 @@ class IpAddress {
 getFirstIpAddress(cidrStr, callback) {
 
   // Initialize return arguments for callback
-  let firstIpAddress = null;
+  let firstIpAddress = {
+      ipv4: null,
+      ipv6: null
+  };
   let callbackError = null;
-  let ipv4MappedIpv6Add = null;
 
   // Instantiate an object from the imported class and assign the instance to variable cidr.
   const cidr = new IPCIDR(cidrStr);
@@ -79,5 +81,3 @@ getFirstIpAddress(cidrStr, callback) {
 }
 
 module.exports = new IpAddress;
-
-
